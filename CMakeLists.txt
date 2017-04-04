@@ -6,6 +6,7 @@ add_library(gsl INTERFACE)
 target_include_directories(gsl
     INTERFACE
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
 )
 
 install(
@@ -20,7 +21,7 @@ install(
 
 install(
     EXPORT gsl-config
-    DESTINATION lib/gsl
+    DESTINATION share/cmake/gsl
 )
 
 enable_testing()
